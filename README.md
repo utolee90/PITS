@@ -27,6 +27,7 @@ This work is accepted in
 
 ### Dataset & Hyperparameters
 
+아래 소스는 jupyter-notebook 상에서 입력하면 됩니다.
 ```python
 ds_pretrain = 'etth1'
 ds_finetune = 'etth1'
@@ -48,6 +49,9 @@ ep_ft_entire = ep_ft_head * 2
 
 ### 1) Pretrain
 
+Finetune하기 전에 pretrain을 실행해야 합니다.
+아래 소스는 jupyter-notebook 상에서 입력하면 됩니다.
+혹은 `scripts/etth1_pretrain_test.sh` 참조해서 스크립트를 작성하셔도 됩니다.
 ```python
 !python PITS_pretrain.py --dset_pretrain {ds_pretrain} \
     --context_points {context_points} --d_model {d_model} --patch_len {patch_len} --stride {stride} \
@@ -57,6 +61,9 @@ ep_ft_entire = ep_ft_head * 2
 
 ### 2) Finetune
 
+먼저 Pretrain을 먼저 수행한 후에 Finetune을 실시합니다.
+아래 소스는 jupyter-notebook 상에서 입력하면 됩니다.
+혹은 `scripts/etth1_finetune_test.sh` 참조해서 스크립트를 작성하셔도 됩니다.
 ```python
 for pred_len in [96, 192, 336, 720]:
   !python PITS_finetune.py --dset_pretrain {ds_pretrain} --dset_finetune {ds_finetune} \

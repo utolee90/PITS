@@ -5,17 +5,17 @@ if [ ! -d "$log_dir" ]; then
   mkdir -p "$log_dir"
 fi
 
-ds_pretrain='etth1'
-ds_finetune='etth1'
+ds_pretrain='exchange'
+ds_finetune='exchange'
 
 # (1) Model Size
 d_model=128
 
 # (2) Input Size
-context_points=512 # 입력 사이즈
-patch_len=12 # 조각 길이
-stride=12 # 분할 길이
-num_patches=42 # 패치 수
+context_points=96 # 입력 사이즈
+patch_len=16 # 조각 길이
+stride=8 # 분할 길이
+num_patches=11 # 패치 수
 
 # (3) Finetune Epoch
 ep_ft_head=5
