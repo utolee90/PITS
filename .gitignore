@@ -1,0 +1,14 @@
+*.pyc
+*/__pycache__
+*/.ipynb_checkpoints
+*/*/__pycache__
+PITS_self_supervised/dataset
+PITS_self_supervised/logs
+PITS_self_supervised/saved_models
+PITS_self_supervised/temp
+PITS_supervised/dataset
+PITS_supervised/checkpoints
+PITS_supervised/results
+PITS_supervised/test_resutls
+PITS_supervised/logs
+

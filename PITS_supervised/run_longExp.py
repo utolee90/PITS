@@ -113,7 +113,8 @@ if args.is_training:
             args.embed,
             args.distil,
             ii)
-
+        
+        print("DEVICE_ID:::", args.device_id)
         exp = Exp(args)  # set experiments
         print('>>>>>>>start training : {}>>>>>>>>>>>>>>>>>>>>>>>>>>'.format(setting))
         exp.train(setting)

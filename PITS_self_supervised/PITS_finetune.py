@@ -67,7 +67,7 @@ parser.add_argument('--lr', type=float, default=1e-4, help='learning rate')
 parser.add_argument('--finetuned_model_id', type=int, default=1, help='id of the saved finetuned model')
 parser.add_argument('--model_type', type=str, default='based_model', help='for multivariate model or univariate model')
 # Device Id
-parser.add_argument('--device_id', type=int, default=7, help='Device ID')
+parser.add_argument('--device_id', type=int, default=0, help='Device ID')
 parser.add_argument('--seed', type=int, default=1, help='Random Seed')
 
 parser.add_argument('--aggregate', type=str, default='max')

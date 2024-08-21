@@ -54,7 +54,7 @@ parser.add_argument('--pretrained_model_id', type=int, default=1, help='id of th
 parser.add_argument('--model_type', type=str, default='based_model', help='for multivariate model or univariate model')
 
 # Device Id
-parser.add_argument('--device_id', type=int, default=2, help='Device ID')
+parser.add_argument('--device_id', type=int, default=0, help='Device ID')
 parser.add_argument('--seed', type=int, default=1, help='Random Seed')
 
 args = parser.parse_args()

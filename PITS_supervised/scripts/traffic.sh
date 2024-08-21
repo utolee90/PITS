@@ -8,7 +8,7 @@ fi
 seq_len=768
 model_name=PITS
 
-root_path_name=./dataset/
+root_path_name=./dataset/traffic/
 data_path_name=traffic.csv
 model_id_name=traffic
 data_name=custom

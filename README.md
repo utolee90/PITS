@@ -1,4 +1,7 @@
-# Patch Independence for Time Series
+# Patch Independence for Time Series (Forked by Utolee90)
+
+### Data use
+Add dataset to `PITS_self_supervised/dataset` and `PITS_supervised/dataset`. You can download datset as [This link](https://drive.google.com/drive/u/2/folders/15Wj4pGPCU0IkBExQGXNXI-13HhpC5_nC)
 
 ### Seunghan Lee, Taeyoung Park, Kibok Lee
 
@@ -14,26 +17,7 @@ This work is accepted in
 
 # 0. Dataset
 
-## (1) TS forecasting
-
-Download datasets according to **PatchTST**
-
-Put the data files under
-
-- `\PITS_self_supervised\data\`
-- `\PITS_supervised\data\`
-
-<br>
-
-## (2) TS classification
-
-Download datasets according to xxxxx
-
-Put the data files under
-
-- `\PITS_self_supervised\data\`
-
-<br>
+(See above)
 
 <br>
 
