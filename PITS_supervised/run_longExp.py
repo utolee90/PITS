@@ -89,9 +89,9 @@ random.seed(fix_seed)
 torch.manual_seed(fix_seed)
 np.random.seed(fix_seed)
 
-args.data_path = args.data + '.csv'
-if args.data=='custom':
-    args.data_path  = 'weather.csv'
+# args.data_path = args.data + '.csv'
+# if args.data=='custom':
+    # args.data_path  = 'weather.csv'
 
 print('Args in experiment:')
 print(args)
