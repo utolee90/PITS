@@ -3,7 +3,7 @@ from exp.exp_basic import Exp_Basic
 #from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear, PatchTST, PITS
 from models import PITS
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
-from utils.metrics import metric
+from utils.metrics import metric, SMAE, REC_CORR, RATIO_IRR
 
 import numpy as np
 import torch
@@ -260,18 +260,21 @@ class Exp_Main(Exp_Basic):
             os.makedirs(folder_path)
 
         mae, mse, rmse, mape, mspe, rse, corr = metric(preds, trues)
-        print('mse:{}, mae:{}, rse:{}'.format(mse, mae, rse))
-        #f = open("result.txt", 'a')
-        #f.write(setting + "  \n")
-        #f.write('mse:{}, mae:{}, rse:{}'.format(mse, mae, rse))
-        #f.write('\n')
-        ##f.write('\n')
-        #f.close()
+        smae = SMAE(preds, trues)
+        rec_corr = REC_CORR(preds, trues)
+        ratio_irr = RATIO_IRR(preds, trues)
+        print('mse:{}, mae:{}, rse:{} me:{}, corr:{}, ratio_irr:{}'.format(mse, mae, rse, smae, rec_corr, ratio_irr))
+        f = open("result.txt", 'a')
+        f.write(setting + "  \n")
+        f.write('mse:{}, mae:{}, rse:{} me:{}, corr:{}, ratio_irr:{}'.format(mse, mae, rse, smae, rec_corr, ratio_irr))
+        f.write('\n')
+        f.write('\n')
+        f.close()
 
         np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe,rse, corr]))
-        #np.save(folder_path + 'pred.npy', preds)
-        # np.save(folder_path + 'true.npy', trues)
-        # np.save(folder_path + 'x.npy', inputx)
+        np.save(folder_path + 'pred.npy', preds)
+        np.save(folder_path + 'true.npy', trues)
+        np.save(folder_path + 'x.npy', inputx)
         return
 
     def predict(self, setting, load=False):

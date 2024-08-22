@@ -76,9 +76,9 @@ parser.add_argument('--use_amp', action='store_true', help='use automatic mixed 
 
 # GPU
 parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')
-parser.add_argument('--gpu', type=int, default=0, help='gpu')
+# parser.add_argument('--gpu', type=int, default=0, help='gpu')
 parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
-parser.add_argument('--device_id', type=int, default=5)
+parser.add_argument('--device_id', type=int, default=0)
 parser.add_argument('--test_flop', action='store_true', default=False, help='See utils/tools for usage')
 
 args = parser.parse_args()

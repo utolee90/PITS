@@ -12,11 +12,11 @@ model_name=PITS
 TORCH_USE_CUDA_DSA=0
 root_path_name=./dataset/exchange_rate/
 data_path_name=exchange_rate.csv
-model_id_name=pits_exchange
+model_id_name=pits_exchange_0822
 data_name=custom
 
 random_seed=2023
-for pred_len in 96 192 336 720
+for pred_len in 336 720
 do
     python -u run_longExp.py \
       --random_seed $random_seed \
@@ -33,7 +33,7 @@ do
       --d_model 128 \
       --patch_len 16\
       --stride 8\
-      --train_epochs 20\
+      --train_epochs 25\
       --patience 5\
       --itr 1 --batch_size 128 --learning_rate 0.0001 >logs/LongForecasting/$model_name'_'$model_id_name'_'$seq_len'_'$pred_len.log 
 done
